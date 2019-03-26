@@ -1,0 +1,5 @@
+.header-bottom-area.fixed-header{
+  position: sticky;
+  top: 0;
+}
+/*also Can use position:fixed*/
