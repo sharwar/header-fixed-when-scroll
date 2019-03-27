@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Header fixed when scroll</title>
+	<link rel="stylesheet" href="styles.css" />
+	
+	<style type="text/css">
+	.code{background:#fff;padding:25px;max-width:70%;margin:30px auto;}
+	.header-bottom{height:100px;background:tomato;}
+	.header-top{ background: #262f26;height: 400px;}
+	.header-top a{color:#fff;}
+		.header-top, .header-bottom {
+			text-align: center;
+			font-size: 50px;
+			color: white;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.content{background:#f2f2f2; height:1300px;overflow:hidden;}
+		
+		
+		
+		/*Add this for sticky */ 
+		.fixed-header{ 
+			position: sticky; 
+			top: 0; 
+			} 
+	</style>
+	
+</head>
+<body>
+	<div class="header-top"><a href="https://www.sharwar.com">Top header</a></div>
+
+	<!-- Fixed header header bottom -->
+	<div class="header-bottom">Header fixed scroll</div>
+	
+	
+	
+	<div class="content">
+	
+			<div class="code">
+			<pre class="html5" style="font-family:monospace;"><ol>
+			<li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #ff0000; font-style: italic;">/*HTML */</span> </div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #009900;">&lt;<span style="color: #000000; font-weight: bold;">div</span> <span style="color: #000066;">class</span><span style="color: #66cc66;">=</span><span style="color: #ff0000;">&quot;header-bottom&quot;</span>&gt;&lt;<span style="color: #66cc66;">/</span><span style="color: #000000; font-weight: bold;">div</span>&gt;</span></div></li></ol></pre>
+		</div>
+	
+			<div class="code">
+<pre class="cpp" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #ff0000; font-style: italic;">/*css */</span> </div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">.<span style="color: #007788;">header</span><span style="color: #000040;">-</span>bottom.<span style="color: #007788;">fixed</span><span style="color: #000040;">-</span>header<span style="color: #008000;">&#123;</span> </div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">position<span style="color: #008080;">:</span> sticky<span style="color: #008080;">;</span> </div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">top<span style="color: #008080;">:</span> <span style="color: #0000dd;">0</span><span style="color: #008080;">;</span> </div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;"><span style="color: #008000;">&#125;</span> </div></li></ol></pre>
+		
+		</div>
+		
+				<div class="code">
+			<pre class="jquery" style="font-family:monospace;"><ol><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #006600; font-style: italic;">//fixed header when scroll</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">	<span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span>window<span style="color: #009900;">&#41;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		.<span style="color: #000066;">resize</span><span style="color: #009900;">&#40;</span><span style="color: #003366; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			<span style="color: #003366; font-weight: bold;">var</span> windowHeight <span style="color: #339933;">=</span> <span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span>window<span style="color: #009900;">&#41;</span>.<span style="color: #000066;">height</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			<span style="color: #003366; font-weight: bold;">var</span> ninetypercent <span style="color: #339933;">=</span> <span style="color: #CC0000;">0</span> <span style="color: #339933;">*</span> windowHeight<span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			<span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span>document<span style="color: #009900;">&#41;</span>.<span style="color: #000066;">scroll</span><span style="color: #009900;">&#40;</span><span style="color: #003366; font-weight: bold;">function</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">				<span style="color: #003366; font-weight: bold;">var</span> y <span style="color: #339933;">=</span> <span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #000066; font-weight: bold;">this</span><span style="color: #009900;">&#41;</span>.<span style="color: #000066;">scrollTop</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">&nbsp;</div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">				<span style="color: #000066; font-weight: bold;">if</span> <span style="color: #009900;">&#40;</span>y <span style="color: #339933;">&gt;</span> ninetypercent<span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">					<span style="color: #006600; font-style: italic;">// Add the &quot;sticky&quot; class</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">					<span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;.header-bottom&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #000066;">addClass</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;fixed-header&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">				<span style="color: #009900;">&#125;</span> <span style="color: #000066; font-weight: bold;">else</span> <span style="color: #009900;">&#123;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">					<span style="color: #006600; font-style: italic;">// Else remove it.</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">					<span style="color: #000066;">$</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;.header-bottom&quot;</span><span style="color: #009900;">&#41;</span>.<span style="color: #000066;">removeClass</span><span style="color: #009900;">&#40;</span><span style="color: #3366CC;">&quot;fixed-header&quot;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: bold; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">				<span style="color: #009900;">&#125;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">			<span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		<span style="color: #009900;">&#125;</span><span style="color: #009900;">&#41;</span></div></li><li style="font-weight: normal; vertical-align:top;"><div style="font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;">		.<span style="color: #000066;">resize</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>	</div></li></ol></pre>
+		</div>
+	
+	
+	</div>
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" ></script>
+	<script type="text/javascript">
+				
+	//fixed header when scroll
+	$(window)
+		.resize(function() {
+			// Variables
+			var windowHeight = $(window).height();
+
+			// Find the value of 90% of the viewport height
+			var ninetypercent = 0 * windowHeight;
+
+			// When the document is scrolled ninety percent, toggle the classes
+			// Does not work in iOS 7 or below
+			// Hasn't been tested in iOS 8
+			$(document).scroll(function() {
+				// Store the document scroll function in a variable
+				var y = $(this).scrollTop();
+
+				// If the document is scrolled 90%
+				if (y > ninetypercent) {
+					// Add the "sticky" class
+					$(".header-bottom").addClass("fixed-header");
+				} else {
+					// Else remove it.
+					$(".header-bottom").removeClass("fixed-header");
+				}
+			});
+
+			// Call it on resize.
+		})
+		.resize();		
+	</script>
+	
+</body>
+</html>
